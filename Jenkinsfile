@@ -1,7 +1,7 @@
 node{
     
     stage('checkout'){
-        git 'https://github.com/shubhamkushwah123/insurance-project-demo.git'
+        git 'https://github.com/andy-rey/insurance-project-demo.git'
     }
     
     stage('maven build'){
@@ -24,7 +24,7 @@ node{
     }
     
     stage('checkout regression test source code'){
-        git 'https://github.com/shubhamkushwah123/my-selenium-test-app.git'
+        git 'https://github.com/andy-rey/devOpsSeleniumHW.git'
     }
     
     stage('build test scripts'){
@@ -36,10 +36,10 @@ node{
     }
 
     stage('checkout'){
-        git 'https://github.com/shubhamkushwah123/insurance-project-demo.git'
+        git 'https://github.com/andy-rey/insurance-project-demo.git'
     }
     
-     stage('Deploy to Test'){
+     stage('Deploy to Prod'){
      ansiblePlaybook become: true, credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'configure-prod-server.yml', vaultTmpPath: ''
     }
     
