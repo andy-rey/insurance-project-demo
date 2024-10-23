@@ -32,7 +32,7 @@ node{
     }
     
     stage('execute selenium test script'){
-        sh 'java -jar target/my-app-test-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
+        sh 'java -jar target/assignment-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
     }
 
     stage('checkout'){
