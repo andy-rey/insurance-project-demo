@@ -9,13 +9,13 @@ node{
     }
     
     stage('containerize'){
-      //  sh 'docker build -t shubhamkushwah123/insure-me:1.0 .'
+       sh 'docker build -t amarixrey/insure-me:1.0 .'
     }
     
     stage('Release'){
         withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerHubPwd')]) {
-      //  sh "docker login -u shubhamkushwah123 -p ${dockerHubPwd}"
-     //   sh 'docker push shubhamkushwah123/insure-me:1.0'
+       sh "docker login -u amarixrey -p ${dockerHubPwd}"
+       sh 'docker push amarixrey/insure-me:1.0'
         }
     }
     
