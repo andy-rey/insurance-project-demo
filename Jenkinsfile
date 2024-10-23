@@ -9,7 +9,7 @@ node{
     }
     
     stage('containerize'){
-       sh 'docker build -t amarixrey/insure-me:1.0 .'
+      // sh 'docker build -t amarixrey/insure-me:1.0 .'
     }
     
     stage('Release'){
